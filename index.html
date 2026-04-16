@@ -101,6 +101,25 @@
   .breadcrumb a:hover { text-decoration: underline; }
   .breadcrumb span { margin: 0 6px; }
 
+  /* ── PAGE BANNER ── */
+  .page-banner {
+    width: 100%;
+    height: 180px;
+    background: url('assets/red_truck.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .banner-overlay {
+    background: rgba(51,51,51,0.85);
+    color: #FFFFFF;
+    padding: 20px 48px 20px 48px;
+    font-size: 1.8rem;
+    font-family: inherit;
+    font-weight: 400;
+  }
+
   /* ── HERO ── */
   .hero {
     background: linear-gradient(135deg, var(--navy) 0%, #0D3352 55%, #0A5060 100%);
@@ -731,6 +750,11 @@
   <a href="#">Services</a><span>›</span>
   <a href="#">Installation & Relocation</a><span>›</span>
   Laboratory Relocation Services
+</div>
+
+<!-- PAGE BANNER -->
+<div class="page-banner">
+  <div class="banner-overlay">Relocation Services</div>
 </div>
 
 <!-- HERO -->
