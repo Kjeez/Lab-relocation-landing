@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laboratory Relocation Services | NovaTrans Life Sciences</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1F3A;
+    --teal: #007B82;
+    --teal-light: #00A8B0;
+    --teal-pale: #E6F7F8;
+    --sky: #D0EEF0;
+    --white: #FFFFFF;
+    --gray-50: #F8FAFB;
+    --gray-100: #EEF2F5;
+    --gray-400: #8A9BAD;
+    --gray-600: #4A5D70;
+    --gray-800: #1E2F3F;
+    --accent: #E8532B;
+    --gold: #C9943A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--navy);
+    background: var(--white);
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--teal-light);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-logo-icon svg { width: 20px; height: 20px; }
+  .nav-logo-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--white);
+    letter-spacing: 0.02em;
+  }
+  .nav-logo-name span { color: var(--teal-light); }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal-light); }
+  .nav-cta {
+    background: var(--teal);
+    color: var(--white) !important;
+    padding: 8px 20px;
+    border-radius: 4px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--teal-light) !important; }
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb {
+    background: var(--gray-100);
+    padding: 10px 48px;
+    font-size: 0.78rem;
+    color: var(--gray-400);
+  }
+  .breadcrumb a { color: var(--teal); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb span { margin: 0 6px; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #0D3352 55%, #0A5060 100%);
+    padding: 80px 48px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,168,176,0.12);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 20px; right: 20px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,168,176,0.08);
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(0,168,176,0.18);
+    color: var(--teal-light);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 22px;
+  }
+  .hero h1 em { color: var(--teal-light); font-style: italic; }
+  .hero-desc {
+    color: rgba(255,255,255,0.72);
+    font-size: 1rem;
+    max-width: 480px;
+    margin-bottom: 36px;
+    line-height: 1.75;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+  .btn-primary {
+    background: var(--teal);
+    color: var(--white);
+    padding: 13px 28px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-primary:hover { background: var(--teal-light); transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: 13px 28px;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-secondary:hover { border-color: var(--teal-light); background: rgba(0,168,176,0.08); }
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    padding: 20px 0 28px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .stat-item { display: flex; flex-direction: column; }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.9rem;
+    color: var(--teal-light);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.55); margin-top: 4px; }
+  .hero-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 0;
+    align-self: end;
+  }
+  .hero-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 20px 24px;
+    backdrop-filter: blur(4px);
+    transition: background 0.3s;
+  }
+  .hero-card:hover { background: rgba(255,255,255,0.1); }
+  .hero-card-icon {
+    width: 36px; height: 36px;
+    background: rgba(0,168,176,0.2);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 10px;
+  }
+  .hero-card-icon svg { color: var(--teal-light); }
+  .hero-card h4 { color: var(--white); font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+  .hero-card p { color: rgba(255,255,255,0.55); font-size: 0.8rem; }
+  .hero-badge {
+    position: absolute;
+    top: -16px; right: 24px;
+    background: var(--gold);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 2px;
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .trust-label { color: rgba(255,255,255,0.4); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap; }
+  .trust-logos { display: flex; gap: 36px; align-items: center; }
+  .trust-logo {
+    color: rgba(255,255,255,0.35);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* ── INTRO SECTION ── */
+  .section { padding: 72px 48px; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 14px;
+  }
+  .section-tag::before {
+    content: '';
+    display: inline-block;
+    width: 20px; height: 2px;
+    background: var(--teal);
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  h2.section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    color: var(--navy);
+    line-height: 1.2;
+    max-width: 640px;
+    margin-bottom: 20px;
+  }
+  .section-sub {
+    color: var(--gray-600);
+    font-size: 0.97rem;
+    max-width: 640px;
+    line-height: 1.8;
+    margin-bottom: 48px;
+  }
+
+  /* ── INTRO 2-COL ── */
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .intro-img-block {
+    position: relative;
+  }
+  .intro-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--teal-pale) 0%, var(--sky) 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .intro-img-inner { text-align: center; }
+  .intro-img-inner svg { width: 96px; height: 96px; color: var(--teal); opacity: 0.4; }
+  .intro-img-label {
+    font-size: 0.75rem;
+    color: var(--teal);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 12px;
+  }
+  .intro-float-card {
+    position: absolute;
+    bottom: -20px;
+    right: -24px;
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-shadow: 0 8px 32px rgba(11,31,58,0.12);
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    min-width: 220px;
+  }
+  .float-icon {
+    width: 42px; height: 42px;
+    background: var(--teal-pale);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .float-icon svg { width: 22px; height: 22px; color: var(--teal); }
+  .float-text h5 { font-size: 0.85rem; font-weight: 600; color: var(--navy); }
+  .float-text p { font-size: 0.75rem; color: var(--gray-400); }
+  .check-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+  .check-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+  }
+  .check-list .chk {
+    width: 20px; height: 20px;
+    background: var(--teal-pale);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .check-list .chk svg { width: 11px; height: 11px; color: var(--teal); }
+
+  /* ── SERVICES CARDS ── */
+  .bg-gray { background: var(--gray-50); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 0;
+  }
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 8px;
+    padding: 32px 28px;
+    transition: box-shadow 0.25s, border-color 0.25s, transform 0.2s;
+    cursor: default;
+  }
+  .service-card:hover {
+    box-shadow: 0 12px 40px rgba(11,31,58,0.1);
+    border-color: var(--teal-pale);
+    transform: translateY(-3px);
+  }
+  .service-icon {
+    width: 52px; height: 52px;
+    background: var(--teal-pale);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+  }
+  .service-icon svg { width: 26px; height: 26px; color: var(--teal); }
+  .service-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .service-card p { font-size: 0.85rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 20px; }
+  .service-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--teal);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.02em;
+  }
+  .service-link:hover { color: var(--teal-light); }
+  .service-link svg { width: 14px; height: 14px; transition: transform 0.2s; }
+  .service-link:hover svg { transform: translateX(3px); }
+
+  /* ── PROCESS ── */
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    position: relative;
+    margin-top: 16px;
+  }
+  .process-grid::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: calc(10% + 14px);
+    right: calc(10% + 14px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--teal-pale), var(--sky), var(--teal-pale));
+    z-index: 0;
+  }
+  .process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 12px;
+    position: relative;
+    z-index: 1;
+  }
+  .step-num {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 18px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--teal);
+    position: relative;
+    z-index: 2;
+    transition: background 0.25s, color 0.25s;
+  }
+  .process-step:hover .step-num { background: var(--teal); color: var(--white); }
+  .step-title { font-size: 0.88rem; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+  .step-desc { font-size: 0.78rem; color: var(--gray-400); line-height: 1.6; }
+
+  /* ── COMPLIANCE BANNER ── */
+  .compliance {
+    background: var(--navy);
+    padding: 64px 48px;
+  }
+  .compliance-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .compliance h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+  .compliance h2 em { color: var(--teal-light); font-style: italic; }
+  .compliance p { color: rgba(255,255,255,0.65); font-size: 0.93rem; line-height: 1.8; margin-bottom: 28px; }
+  .badges { display: flex; flex-wrap: wrap; gap: 10px; }
+  .badge {
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 6px 14px;
+    border-radius: 2px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .compliance-feats { display: flex; flex-direction: column; gap: 20px; }
+  .comp-feat {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .comp-feat-icon {
+    width: 44px; height: 44px;
+    border-radius: 8px;
+    background: rgba(0,168,176,0.15);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .comp-feat-icon svg { width: 22px; height: 22px; color: var(--teal-light); }
+  .comp-feat h4 { font-size: 0.9rem; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+  .comp-feat p { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 16px;
+  }
+  .testimonial-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 8px;
+    padding: 28px;
+    position: relative;
+  }
+  .quote-mark {
+    font-family: 'DM Serif Display', serif;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--teal-pale);
+    position: absolute;
+    top: 12px; left: 20px;
+  }
+  .testimonial-text {
+    font-size: 0.88rem;
+    color: var(--gray-600);
+    line-height: 1.75;
+    margin-bottom: 20px;
+    padding-top: 28px;
+    font-style: italic;
+  }
+  .testimonial-author { display: flex; gap: 12px; align-items: center; }
+  .author-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal-pale), var(--sky));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--teal);
+    flex-shrink: 0;
+  }
+  .author-name { font-size: 0.85rem; font-weight: 600; color: var(--navy); }
+  .author-title { font-size: 0.75rem; color: var(--gray-400); }
+  .stars { color: var(--gold); font-size: 0.75rem; margin-bottom: 4px; }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    background: linear-gradient(135deg, var(--teal) 0%, #005A62 100%);
+    padding: 80px 48px;
+    text-align: center;
+  }
+  .cta-section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .cta-section p {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.97rem;
+    max-width: 560px;
+    margin: 0 auto 36px;
+    line-height: 1.75;
+  }
+  .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-white {
+    background: var(--white);
+    color: var(--teal);
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+  .btn-outline-white {
+    background: transparent;
+    color: var(--white);
+    padding: 14px 32px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--gray-800);
+    padding: 48px 48px 28px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 28px;
+  }
+  .footer-brand p {
+    color: rgba(255,255,255,0.45);
+    font-size: 0.82rem;
+    line-height: 1.7;
+    margin-top: 14px;
+    max-width: 240px;
+  }
+  .footer-col h5 {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a {
+    color: rgba(255,255,255,0.45);
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--teal-light); }
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-bottom p { color: rgba(255,255,255,0.3); font-size: 0.75rem; }
+
+  @media (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; padding: 60px 28px 0; }
+    .hero-visual { display: none; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .process-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .process-grid::before { display: none; }
+    .compliance-inner, .intro-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .section { padding: 56px 28px; }
+  }
+
+  @media (max-width: 640px) {
+    .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr; }
+    .trust-logos { display: none; }
+    .footer-top { grid-template-columns: 1fr; }
+    .breadcrumb { padding: 10px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg fill="none" viewBox="0 0 20 20" stroke="white" stroke-width="2"><path d="M3 10l7-7 7 7M5 8v9h4v-5h2v5h4V8"/></svg>
+    </div>
+    <span class="nav-logo-name">Nova<span>Trans</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Industries</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Resources</a></li>
+    <li><a href="#">Contact Us</a></li>
+    <li><a href="#" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="#">Home</a><span>›</span>
+  <a href="#">Services</a><span>›</span>
+  <a href="#">Installation & Relocation</a><span>›</span>
+  Laboratory Relocation Services
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Laboratory Services</div>
+    <h1>Precision Lab Relocation — <em>Zero Compromise</em></h1>
+    <p class="hero-desc">End-to-end relocation of your critical laboratory instruments, GMP environments, and life sciences equipment. Every move engineered for compliance, continuity, and zero data loss.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn-primary">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+        Request Consultation
+      </a>
+      <a href="#" class="btn-secondary">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 15l5-3-5-3v6z"/></svg>
+        Watch Overview
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">2,400+</span>
+        <span class="stat-label">Lab Moves Completed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">40+</span>
+        <span class="stat-label">Countries Served</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">99.7%</span>
+        <span class="stat-label">On-time Delivery</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-badge">GMP Compliant</div>
+    <div class="hero-card">
+      <div class="hero-card-icon">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+      </div>
+      <h4>Instrument Decommissioning</h4>
+      <p>Full SOPs, chain-of-custody documentation, and calibration records</p>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-icon">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+      </div>
+      <h4>Validated Transport</h4>
+      <p>Temperature-controlled, vibration-monitored vehicles with real-time GPS tracking</p>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-icon">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <h4>IQ/OQ/PQ Requalification</h4>
+      <p>Full instrument requalification at destination — audit-ready documentation</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <span class="trust-label">Trusted by</span>
+  <div class="trust-logos">
+    <span class="trust-logo">PharmaCorp Global</span>
+    <span class="trust-logo">BioGenesis Labs</span>
+    <span class="trust-logo">MedTech Alliance</span>
+    <span class="trust-logo">Apex Diagnostics</span>
+    <span class="trust-logo">Helix Research Group</span>
+  </div>
+</div>
+
+<!-- INTRO SECTION -->
+<section class="section">
+  <div class="section-inner">
+    <div class="intro-grid">
+      <div class="intro-img-block">
+        <div class="intro-img">
+          <div class="intro-img-inner">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+              <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+            </svg>
+            <div class="intro-img-label">Life Sciences Equipment</div>
+          </div>
+        </div>
+        <div class="intro-float-card">
+          <div class="float-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div class="float-text">
+            <h5>FDA 21 CFR Part 11 Ready</h5>
+            <p>All documentation audit-trail compliant</p>
+          </div>
+        </div>
+      </div>
+      <div class="intro-text">
+        <div class="section-tag">Why NovaTrans</div>
+        <h2 class="section-title">Built for Regulated Environments. Every Step of the Way.</h2>
+        <p class="section-sub">Relocating a pharmaceutical or clinical laboratory is not just a logistics challenge — it's a compliance event. Our dedicated life sciences division combines deep GMP knowledge with specialist engineering teams to protect your instruments, your data, and your timelines.</p>
+        <ul class="check-list">
+          <li>
+            <span class="chk"><svg fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-5"/></svg></span>
+            Instrument-level risk assessment before every move with documented FMEA
+          </li>
+          <li>
+            <span class="chk"><svg fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-5"/></svg></span>
+            Certified engineers trained for HPLC, mass spec, flow cytometers, and imaging systems
+          </li>
+          <li>
+            <span class="chk"><svg fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-5"/></svg></span>
+            Full chain-of-custody documentation and regulatory submission support
+          </li>
+          <li>
+            <span class="chk"><svg fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-5"/></svg></span>
+            Dedicated project manager assigned from kick-off to final IQ/OQ sign-off
+          </li>
+        </ul>
+        <a href="#" class="btn-primary">Download Service Overview</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section bg-gray">
+  <div class="section-inner">
+    <div class="section-tag">Our Services</div>
+    <h2 class="section-title">Comprehensive Relocation Solutions for Life Sciences</h2>
+    <p class="section-sub">From single-instrument transfers to full laboratory decommissioning and fit-out, we handle every stage under one quality-managed programme.</p>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+        </div>
+        <h3>Analytical Instrument Relocation</h3>
+        <p>Safe, validated moves for HPLC, LC-MS, GC, UV-Vis, NMR, and other precision analytical instruments with full requalification.</p>
+        <a href="#" class="service-link">Learn More <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+        </div>
+        <h3>Biobanking & Sample Management</h3>
+        <p>Controlled-temperature transport for biological samples, cell lines, and biobank inventories. Continuous monitoring and deviation reporting throughout.</p>
+        <a href="#" class="service-link">Learn More <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        </div>
+        <h3>GMP Facility Decommissioning</h3>
+        <p>Compliant decommissioning of regulated manufacturing and QC spaces including documentation packs for regulatory filing and site closure audits.</p>
+        <a href="#" class="service-link">Learn More <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>IT Systems & Lab Data Migration</h3>
+        <p>LIMS, ELN, and chromatography data system migration with validated data integrity checks — 21 CFR Part 11 compliant audit trail preservation.</p>
+        <a href="#" class="service-link">Learn More <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+        </div>
+        <h3>International Logistics & Customs</h3>
+        <p>Cross-border laboratory freight with specialist life sciences customs handling, permits, and import compliance in 40+ countries.</p>
+        <a href="#" class="service-link">Learn More <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3>IQ/OQ/PQ Requalification</h3>
+        <p>Full installation, operational, and performance qualification services by vendor-trained engineers with GxP-compliant protocol and report generation.</p>
+        <a href="#" class="service-link">Learn More <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-tag">Our Process</div>
+    <h2 class="section-title">How a NovaTrans Move Works</h2>
+    <p class="section-sub">A structured, quality-assured process designed to give you visibility and confidence at every milestone.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Discovery & Risk Assessment</div>
+        <div class="step-desc">On-site audit, instrument inventory, regulatory mapping, and FMEA documentation.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Move Plan & Qualification Protocol</div>
+        <div class="step-desc">Detailed relocation plan with IQ/OQ/PQ protocol review and client sign-off.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Decommission & Pack</div>
+        <div class="step-desc">Certified engineers decommission instruments; specialist anti-static, anti-vibration packing.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Validated Transport</div>
+        <div class="step-desc">GPS-tracked, monitored vehicles with real-time environmental logging and deviation alerts.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <div class="step-title">Install & Requalification</div>
+        <div class="step-desc">Full reinstallation, IQ/OQ/PQ execution, and audit-ready documentation delivered.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE SECTION -->
+<section class="compliance">
+  <div class="compliance-inner">
+    <div>
+      <div class="section-tag" style="color:var(--teal-light)">Regulatory Compliance</div>
+      <h2>Your Move. <em>Fully Documented.</em> Fully Defensible.</h2>
+      <p>Every NovaTrans relocation generates a complete, review-ready documentation package. Our quality management system is built around the expectations of FDA, EMA, and MHRA inspectors — so your move never becomes a finding.</p>
+      <div class="badges">
+        <span class="badge">FDA 21 CFR Part 11</span>
+        <span class="badge">EU GMP Annex 15</span>
+        <span class="badge">ISO 9001:2015</span>
+        <span class="badge">ICH Q10</span>
+        <span class="badge">GAMP 5</span>
+        <span class="badge">MHRA GxP</span>
+      </div>
+    </div>
+    <div class="compliance-feats">
+      <div class="comp-feat">
+        <div class="comp-feat-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <div>
+          <h4>Change Control Documentation</h4>
+          <p>Formal change control packages for every instrument, integrated with your existing QMS.</p>
+        </div>
+      </div>
+      <div class="comp-feat">
+        <div class="comp-feat-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+        </div>
+        <div>
+          <h4>Real-Time Environmental Monitoring</h4>
+          <p>Continuous temperature, humidity, and shock data with signed, timestamped records.</p>
+        </div>
+      </div>
+      <div class="comp-feat">
+        <div class="comp-feat-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </div>
+        <div>
+          <h4>Audit-Ready Report Package</h4>
+          <p>Bound final report with all protocols, executed records, and deviations — ready for regulatory review on day one.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-tag">Client Stories</div>
+    <h2 class="section-title">Trusted by Leading Life Sciences Organisations</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">NovaTrans relocated our entire QC laboratory across two sites during an active FDA inspection period. Zero deviations, zero instrument failures. The documentation package was inspection-ready on arrival.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MK</div>
+          <div>
+            <div class="stars">★★★★★</div>
+            <div class="author-name">Dr. Marina Kessler</div>
+            <div class="author-title">VP Quality, BioGenesis Labs</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">The IQ/OQ/PQ execution was flawless. Our HPLC systems were requalified and back in production within 48 hours of delivery — a timeline we thought was impossible for a cross-border move.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">RJ</div>
+          <div>
+            <div class="stars">★★★★★</div>
+            <div class="author-name">Rajiv Joshi</div>
+            <div class="author-title">Head of Analytical, Apex Pharma</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">We've used three relocation providers over the years. NovaTrans is the first one that truly understood regulated environments. They spoke our language from day one and anticipated every compliance requirement.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SC</div>
+          <div>
+            <div class="stars">★★★★★</div>
+            <div class="author-name">Sarah Connelly</div>
+            <div class="author-title">Director of Operations, Helix Research Group</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-tag" style="color:rgba(255,255,255,0.6)">Get Started</div>
+  <h2>Ready to Plan Your Laboratory Move?</h2>
+  <p>Speak with a NovaTrans life sciences specialist to receive a customised relocation plan, compliance assessment, and indicative timeline — at no obligation.</p>
+  <div class="cta-btns">
+    <a href="#" class="btn-white">Request a Free Consultation</a>
+    <a href="#" class="btn-outline-white">Download Capability Brochure</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo" style="margin-bottom:0">
+        <div class="nav-logo-icon" style="width:28px;height:28px;">
+          <svg width="16" height="16" fill="none" viewBox="0 0 20 20" stroke="white" stroke-width="2"><path d="M3 10l7-7 7 7M5 8v9h4v-5h2v5h4V8"/></svg>
+        </div>
+        <span class="nav-logo-name">Nova<span>Trans</span></span>
+      </div>
+      <p>Specialist laboratory relocation for pharma, biotech, and life sciences organisations worldwide.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#">Instrument Relocation</a></li>
+        <li><a href="#">Biobanking Transport</a></li>
+        <li><a href="#">GMP Decommissioning</a></li>
+        <li><a href="#">Data Systems Migration</a></li>
+        <li><a href="#">IQ/OQ/PQ Services</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Industries</h5>
+      <ul>
+        <li><a href="#">Pharmaceuticals</a></li>
+        <li><a href="#">Biotechnology</a></li>
+        <li><a href="#">Clinical Diagnostics</a></li>
+        <li><a href="#">Medical Devices</a></li>
+        <li><a href="#">Academic Research</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Compliance & Quality</a></li>
+        <li><a href="#">Case Studies</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 NovaTrans Life Sciences Ltd. All rights reserved.</p>
+    <p>Privacy Policy · Terms of Use · Cookie Settings</p>
+  </div>
+</footer>
+
+</body>
+</html>
