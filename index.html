@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laboratory Relocation Services | NovaTrans Life Sciences</title>
+  <title>Laboratory Relocation Services | Agilent Life Sciences</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap"
@@ -429,21 +429,65 @@
     /* ── PAGE BANNER ── */
     .page-banner {
       width: 100%;
-      height: 500px;
-      background: url('newtruck.jpg.jpg') no-repeat center center;
+      height: auto;
+      min-height: 500px;
+      background: url('trucknew.jpg') no-repeat center 85%;
       background-size: cover;
       position: relative;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 60px 48px;
     }
 
     .banner-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
       background: rgba(51, 51, 51, 0.85);
       color: #FFFFFF;
       padding: 5px 12px 5px 12px;
       font-size: 1.2rem;
       font-family: inherit;
       font-weight: 400;
+      z-index: 2;
+    }
+
+    /* ── HERO FORM CARD ── */
+    .hero-form-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 32px 36px;
+      border-radius: 8px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      width: 100%;
+      max-width: 440px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-form-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    
+    .hero-form-card p {
+      font-size: 0.85rem;
+      color: var(--gray-600);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    
+    .hero-form-card .form-group {
+      margin-bottom: 12px;
+    }
+
+    .hero-form-card input,
+    .hero-form-card select {
+      padding: 10px 12px;
     }
 
     /* ── HERO ── */
@@ -1648,7 +1692,33 @@
       }
 
       .page-banner {
-        height: 180px;
+        height: auto;
+        min-height: auto;
+        padding: 0 0 40px 0;
+        background: var(--gray-50);
+        display: block;
+      }
+
+      .page-banner::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 280px;
+        background: url('newtruck.jpg') no-repeat center 85%;
+        background-size: cover;
+      }
+
+      .hero-form-card {
+        padding: 28px 24px;
+        max-width: none;
+        margin: -40px 20px 0 20px;
+        width: auto;
+      }
+
+      .banner-overlay {
+        bottom: auto;
+        top: 16px;
+        left: 16px;
       }
 
       .cta-section {
@@ -1694,11 +1764,11 @@
     <div class="top-bar">
       <a href="#" class="nav-logo">
         <div class="nav-logo-icon">
-          <img src="logo.png" alt="NovaTrans Logo">
+          <img src="logo.png" alt="Agilent Logo">
         </div>
       </a>
       <div class="top-bar-right">
-        <a href="#">About NovaTrans</a>
+        <a href="#">About Agilent</a>
         <a href="#">Contact Us</a>
         <a href="#">Account</a>
         <div class="top-bar-search">
@@ -1788,6 +1858,33 @@
   <!-- PAGE BANNER -->
   <div class="page-banner">
     <div class="banner-overlay">Relocation Services</div>
+    
+    <!-- HERO CONTACT FORM -->
+    <div class="hero-form-card">
+      <form class="registration-form">
+        <h3>Request a Move Assessment</h3>
+        <p>Get a custom timeline and compliance checklist for your relocation.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Jane" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Doe" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Work Email</label>
+          <input type="email" placeholder="jane.doe@company.com" required>
+        </div>
+        <div class="form-group">
+          <label>Company / Institution</label>
+          <input type="text" placeholder="Company Name" required>
+        </div>
+        <button type="submit" class="btn-primary form-submit" style="margin-top: 8px; padding: 14px;">Get Started</button>
+      </form>
+    </div>
   </div>
 
 
@@ -1815,7 +1912,7 @@
           </div>
         </div>
         <div class="intro-text">
-          <div class="section-tag">Why NovaTrans</div>
+          <div class="section-tag">Why Agilent</div>
           <h2 class="section-title">Built for Regulated Environments. Every Step of the Way.</h2>
           <p class="section-sub">Relocating a pharmaceutical or clinical laboratory is not just a logistics challenge —
             it's a compliance event. Our dedicated life sciences division combines deep GMP knowledge with specialist
@@ -1964,7 +2061,7 @@
   <section class="section">
     <div class="section-inner">
       <div class="section-tag">Our Process</div>
-      <h2 class="section-title">How a NovaTrans Move Works</h2>
+      <h2 class="section-title">How a Agilent Move Works</h2>
       <p class="section-sub">A structured, quality-assured process designed to give you visibility and confidence at
         every milestone.</p>
       <div class="process-grid">
@@ -2005,7 +2102,7 @@
       <div>
         <div class="section-tag" style="color:var(--teal-light)">Regulatory Compliance</div>
         <h2>Your Move. <em>Fully Documented.</em> Fully Defensible.</h2>
-        <p>Every NovaTrans relocation generates a complete, review-ready documentation package. Our quality management
+        <p>Every Agilent relocation generates a complete, review-ready documentation package. Our quality management
           system is built around the expectations of FDA, EMA, and MHRA inspectors — so your move never becomes a
           finding.</p>
         <div class="badges">
@@ -2068,7 +2165,7 @@
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="quote-mark">"</div>
-          <p class="testimonial-text">NovaTrans relocated our entire QC laboratory across two sites during an active FDA
+          <p class="testimonial-text">Agilent relocated our entire QC laboratory across two sites during an active FDA
             inspection period. Zero deviations, zero instrument failures. The documentation package was inspection-ready
             on arrival.</p>
           <div class="testimonial-author">
@@ -2095,7 +2192,7 @@
         </div>
         <div class="testimonial-card">
           <div class="quote-mark">"</div>
-          <p class="testimonial-text">We've used three relocation providers over the years. NovaTrans is the first one
+          <p class="testimonial-text">We've used three relocation providers over the years. Agilent is the first one
             that truly understood regulated environments. They spoke our language from day one and anticipated every
             compliance requirement.</p>
           <div class="testimonial-author">
@@ -2117,7 +2214,7 @@
       <div class="cta-text">
         <div class="section-tag" style="color:rgba(255,255,255,0.6)">Get Started</div>
         <h2>Ready to Plan Your Laboratory Move?</h2>
-        <p>Speak with a NovaTrans life sciences specialist to receive a customised relocation plan, compliance
+        <p>Speak with a Agilent life sciences specialist to receive a customised relocation plan, compliance
           assessment, and indicative timeline — at no obligation.</p>
         <div class="cta-btns" style="justify-content: flex-start; margin-top:24px;">
           <a href="#" class="btn-outline-white">Download Capability Brochure</a>
@@ -2163,7 +2260,7 @@
   <div class="social-connect-bar">
     <div class="social-connect-inner">
       <div class="social-connect-left">
-        <span class="social-connect-text">CONNECT WITH NOVATRANS</span>
+        <span class="social-connect-text">CONNECT WITH AGILENT</span>
         <div class="social-icons">
           <a href="#"><svg fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -2186,7 +2283,7 @@
       <div class="social-connect-right">
         <div class="social-hub-divider"></div>
         <div class="social-hub-text">
-          <span class="social-hub-brand">NOVATRANS</span>
+          <span class="social-hub-brand">AGILENT</span>
           <span class="social-hub-subtitle">SOCIAL HUB</span>
         </div>
       </div>
@@ -2210,16 +2307,16 @@
           <img class="rel-card-img" src="assets/red_truck.png" alt="CrossLab Instrument Relocation">
           <div class="rel-card-body">
             <a href="#" class="rel-card-title">CrossLab Instrument Relocation Services</a>
-            <p class="rel-card-desc">NovaTrans can move any piece of your equipment, regardless of size or complexity,
+            <p class="rel-card-desc">Agilent can move any piece of your equipment, regardless of size or complexity,
               ensuring full compliance and minimal downtime...</p>
           </div>
         </div>
         <div class="rel-card">
-          <img class="rel-card-img" src="newtruck.jpg.jpg" alt="CrossLab Lab Relocation Services"
+          <img class="rel-card-img" src="newtruck.jpg.jpg" alt="Turnkey Laboratory Relocation"
             style="object-position: center 40%;">
           <div class="rel-card-body">
-            <a href="#" class="rel-card-title">CrossLab Lab Relocation Services</a>
-            <p class="rel-card-desc">NovaTrans plans and executes every step of your move for everything in your lab,
+            <a href="#" class="rel-card-title">Turnkey Laboratory Relocation</a>
+            <p class="rel-card-desc">Agilent plans and executes every step of your move for everything in your lab,
               from instruments to desks...</p>
           </div>
         </div>
@@ -2228,7 +2325,7 @@
           <div class="rel-card-body">
             <a href="#" class="rel-card-title">Diagnostic Instrument Relocation</a>
             <p class="rel-card-desc">When you need to change the layout or location of your pathology lab, let us do the
-              heavy lifting for you. With NovaTrans...</p>
+              heavy lifting for you. With Agilent...</p>
           </div>
         </div>
         <div class="rel-card">
@@ -2250,14 +2347,14 @@
     <div class="footer-inner">
       <div class="footer-links-grid">
         <div class="footer-col">
-          <h5>ABOUT NOVATRANS</h5>
+          <h5>ABOUT AGILENT</h5>
           <ul>
             <li><a href="#">Newsroom</a></li>
             <li><a href="#">Company Information</a></li>
             <li><a href="#">Investor Relations</a></li>
             <li><a href="#">Careers</a></li>
             <li><a href="#">Community Relations</a></li>
-            <li><a href="#">Working With NovaTrans</a></li>
+            <li><a href="#">Working With Agilent</a></li>
             <li><a href="#">University Relations</a></li>
             <li><a href="#">Environmental, Social, And Governance</a></li>
             <li><a href="#">Great Science</a></li>
@@ -2292,7 +2389,7 @@
         <div class="footer-col">
           <h5>SUPPORT & SERVICES</h5>
           <ul>
-            <li><a href="#">NovaTrans Community</a></li>
+            <li><a href="#">Agilent Community</a></li>
             <li><a href="#">Technical Support</a></li>
             <li><a href="#">On-Site Services</a></li>
             <li><a href="#">Analytical Instrument Services</a></li>
@@ -2301,7 +2398,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h5>NOW PART OF NOVATRANS</h5>
+          <h5>NOW PART OF AGILENT</h5>
           <ul>
             <li><a href="#">Avida Biomed</a></li>
             <li><a href="#">Biovectra</a></li>
@@ -2315,7 +2412,7 @@
         <div class="footer-brand-row">
           <div class="nav-logo" style="margin-bottom:0; color: white;">
             <div class="nav-logo-icon" style="height:28px;">
-              <img src="logo.png" alt="NovaTrans Logo" style="height:28px; width:auto;">
+              <img src="logo.png" alt="Agilent Logo" style="height:28px; width:auto;">
             </div>
           </div>
           <span style="color:rgba(255,255,255,0.4)">|</span>
@@ -2355,7 +2452,7 @@
           href="#">Accessibility</a>
       </div>
       <div class="footer-copyright">
-        © 2026 NovaTrans Life Sciences Ltd.
+        © 2026 Agilent Life Sciences Ltd.
       </div>
     </div>
   </footer>
